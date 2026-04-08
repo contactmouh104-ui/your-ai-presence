@@ -6,8 +6,9 @@ import ToolCard from "@/components/ToolCard";
 import NewsletterCard from "@/components/NewsletterCard";
 import Footer from "@/components/Footer";
 import tools from "@/data/tools";
+import artistTools from "@/data/artistTools";
 import { Button } from "@/components/ui/button";
-import { SlidersHorizontal, ArrowUpDown } from "lucide-react";
+import { SlidersHorizontal, ArrowUpDown, Palette } from "lucide-react";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,6 +31,19 @@ const Index = () => {
       <HeroSection searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       <CategoryBar activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
 
+      {/* Featured Artist Tools Section */}
+      <section className="container mx-auto px-4 pb-10">
+        <div className="mb-6 flex items-center gap-3">
+          <Palette className="h-5 w-5 text-accent" />
+          <h2 className="font-heading text-xl font-bold text-foreground">أدوات مميزة للرسامين</h2>
+        </div>
+        <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+          {artistTools.map((tool) => (
+            <ToolCard key={tool.id} tool={tool} />
+          ))}
+        </div>
+      </section>
+
       <div className="container mx-auto px-4 pb-16">
         {/* Filter / Sort bar */}
         <div className="mb-6 flex items-center justify-between">
@@ -42,20 +56,17 @@ const Index = () => {
         </div>
 
         {/* Tools grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredTools.map((tool, index) => {
-            // Insert newsletter card after 3rd tool
             if (index === 3) {
               return (
                 <div key="newsletter-wrapper" className="contents">
                   <ToolCard tool={tool} />
-                  {/* Uncomment below if you want newsletter in grid */}
                 </div>
               );
             }
             return <ToolCard key={tool.id} tool={tool} />;
           })}
-          {/* Newsletter as last card in grid */}
           <NewsletterCard />
         </div>
 
