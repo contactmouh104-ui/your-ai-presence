@@ -11,6 +11,8 @@ export interface Tool {
   color: string;
   initial: string;
   rating?: number;
+  image?: string;
+  link?: string;
 }
 
 const pricingColors: Record<string, string> = {
