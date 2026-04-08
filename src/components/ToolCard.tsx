@@ -94,8 +94,14 @@ const ToolCard = ({ tool }: { tool: Tool }) => {
           {tool.description}
         </p>
 
-        <Button variant="hero" size="sm" className="mt-3 w-full gap-1.5 text-xs h-8">
-          <ExternalLink className="h-3 w-3" /> Visit
+        <Button variant="hero" size="sm" className="mt-3 w-full gap-1.5 text-xs h-8" asChild={!!tool.link}>
+          {tool.link ? (
+            <a href={tool.link} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="h-3 w-3" /> Visit
+            </a>
+          ) : (
+            <><ExternalLink className="h-3 w-3" /> Visit</>
+          )}
         </Button>
       </div>
     </div>
