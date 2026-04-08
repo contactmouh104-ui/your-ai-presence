@@ -2,7 +2,7 @@ import type { Tool } from "@/components/ToolCard";
 
 const artistTools: Tool[] = [
   {
-    id: 101, name: "Midjourney", category: "Image Generator", description: "أداة ذكاء اصطناعي تولد صوراً مذهلة من أوصاف نصية، مشهورة بين المصممين والرسامين.", pricing: "Paid", featured: true, color: "linear-gradient(135deg, hsl(200 40% 18%), hsl(220 40% 24%))", initial: "MJ", rating: 4.8,
+    id: 101, name: "iMimic", category: "AI Influencer", description: "أنشئ وامتلك مؤثرين افتراضيين واقعيين / توائم رقمية تنتشر بسرعة وتبني علامتك التجارية المربحة في أي مجال.", pricing: "Paid", featured: true, color: "linear-gradient(135deg, hsl(280 50% 18%), hsl(300 50% 24%))", initial: "iM", rating: 4.8, image: "https://img.sanishtech.com/u/168f0ada809bc063b60f598c69b00d9f.jpg", link: "https://jvz1.com/c/3468163/435083",
   },
   {
     id: 102, name: "DALL·E 3", category: "Image Generator", description: "نموذج توليد صور من OpenAI يحول النصوص إلى أعمال فنية رقمية عالية الجودة.", pricing: "Freemium", featured: true, color: "linear-gradient(135deg, hsl(160 50% 16%), hsl(180 50% 22%))", initial: "DE", rating: 4.6,
