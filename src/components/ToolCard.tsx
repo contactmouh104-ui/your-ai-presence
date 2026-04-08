@@ -28,7 +28,7 @@ const ToolCard = ({ tool }: { tool: Tool }) => {
       >
         {tool.featured && (
           <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-background/80 px-2.5 py-1 text-xs font-medium text-foreground backdrop-blur-sm">
-            <Star className="h-3 w-3 text-amber-400" /> Featured
+            <Star className="h-3 w-3 text-accent" /> Featured
           </span>
         )}
         <span className="font-heading text-2xl font-bold text-foreground">{tool.name}</span>
