@@ -50,15 +50,20 @@ const ToolCard = ({ tool }: { tool: Tool }) => {
     <div className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-[var(--card-hover-shadow)]">
       {/* Banner */}
       <div
-        className="relative flex h-28 items-center justify-center"
-        style={{ background: tool.color }}
+        className="relative flex h-28 items-center justify-center overflow-hidden"
+        style={{ background: tool.image ? undefined : tool.color }}
       >
+        {tool.image && (
+          <img src={tool.image} alt={tool.name} className="absolute inset-0 h-full w-full object-cover" />
+        )}
         {tool.featured && (
-          <span className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-background/80 px-2 py-0.5 text-[10px] font-medium text-foreground backdrop-blur-sm">
+          <span className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-background/80 px-2 py-0.5 text-[10px] font-medium text-foreground backdrop-blur-sm z-10">
             <Star className="h-2.5 w-2.5 text-accent" /> Featured
           </span>
         )}
-        <span className="font-heading text-xl font-bold text-foreground">{tool.name}</span>
+        {!tool.image && (
+          <span className="font-heading text-xl font-bold text-foreground">{tool.name}</span>
+        )}
       </div>
 
       {/* Body */}
