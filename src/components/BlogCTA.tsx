@@ -10,8 +10,8 @@ const BlogCTA = ({ affiliateLink, productName }: BlogCTAProps) => {
   return (
     <div className="my-12 rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card to-primary/5 p-8 text-center">
       <div className="mb-4 flex items-center justify-center gap-2">
-        <ShieldCheck className="h-5 w-5 text-green-400" />
-        <span className="text-sm font-semibold text-green-400 tracking-wide uppercase">Verified Offer</span>
+        <ShieldCheck className="h-5 w-5 text-primary" />
+        <span className="text-sm font-semibold text-primary tracking-wide uppercase">Verified Offer</span>
       </div>
 
       <h3 className="font-heading text-2xl font-bold text-foreground mb-3">
