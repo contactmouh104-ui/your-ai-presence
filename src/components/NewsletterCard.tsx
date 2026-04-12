@@ -1,10 +1,9 @@
-import { Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NewsletterCard = () => {
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden rounded-xl border border-border bg-card p-8 text-center">
-      <Zap className="mb-4 h-8 w-8 text-primary" />
+      <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="ShoNow" className="mb-4 h-10 w-auto" />
       <h3 className="font-heading text-lg font-bold text-foreground">
         JOIN 30,000+ AI ENTHUSIASTS
       </h3>

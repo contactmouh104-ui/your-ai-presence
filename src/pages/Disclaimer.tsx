@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const Disclaimer = () => {
   return (
@@ -14,7 +15,7 @@ const Disclaimer = () => {
             <section>
               <h2 className="text-2xl font-bold text-foreground">Affiliate Disclosure</h2>
               <p className="mt-2 leading-relaxed">
-                POWER AI is a participant in various affiliate programs. This means that when you click on certain links on our website and make a purchase, we may earn a commission at no additional cost to you. These affiliate partnerships help us maintain and improve the quality of content we provide.
+                ShoNow is a participant in various affiliate programs. This means that when you click on certain links on our website and make a purchase, we may earn a commission at no additional cost to you. These affiliate partnerships help us maintain and improve the quality of content we provide.
               </p>
             </section>
 
@@ -49,7 +50,7 @@ const Disclaimer = () => {
             <section>
               <h2 className="text-2xl font-bold text-foreground">Contact</h2>
               <p className="mt-2 leading-relaxed">
-                If you have any questions about this disclaimer, please <a href="/contact" className="text-primary hover:underline">contact us</a>.
+                If you have any questions about this disclaimer, please <Link to="/contact" className="text-primary hover:underline">contact us</Link>.
               </p>
             </section>
           </div>
