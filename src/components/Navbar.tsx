@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Zap, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="Power AI Logo" className="h-12 w-auto" />
+          <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="ShoNow Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop links */}
@@ -32,9 +32,6 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <Button variant="hero" size="sm" className="hidden sm:inline-flex">
             <span className="mr-1">+</span> Submit AI Tool
-          </Button>
-          <Button variant="hero-outline" size="sm" className="hidden sm:inline-flex">
-            Feature Your Tool
           </Button>
           {/* Mobile menu toggle */}
           <button
