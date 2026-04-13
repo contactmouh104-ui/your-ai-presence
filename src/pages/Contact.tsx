@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +9,11 @@ import { Textarea } from "@/components/ui/textarea";
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEOHead
+        title="Contact Us"
+        description="Have a question or suggestion about AI tools? Get in touch with the ShoNow team. We'd love to hear from you."
+        canonical="https://shonow.online/contact"
+      />
       <Navbar />
       <main className="container mx-auto px-4 py-16">
         <div className="mx-auto max-w-2xl">
@@ -20,21 +26,21 @@ const Contact = () => {
           <form className="space-y-6 rounded-xl border border-border bg-card p-8" onSubmit={(e) => e.preventDefault()}>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-medium">Name</label>
-                <Input placeholder="Your name" className="bg-background" />
+                <label htmlFor="contact-name" className="mb-2 block text-sm font-medium">Name</label>
+                <Input id="contact-name" placeholder="Your name" className="bg-background" />
               </div>
               <div>
-                <label className="mb-2 block text-sm font-medium">Email</label>
-                <Input type="email" placeholder="your@email.com" className="bg-background" />
+                <label htmlFor="contact-email" className="mb-2 block text-sm font-medium">Email</label>
+                <Input id="contact-email" type="email" placeholder="your@email.com" className="bg-background" />
               </div>
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium">Subject</label>
-              <Input placeholder="How can we help?" className="bg-background" />
+              <label htmlFor="contact-subject" className="mb-2 block text-sm font-medium">Subject</label>
+              <Input id="contact-subject" placeholder="How can we help?" className="bg-background" />
             </div>
             <div>
-              <label className="mb-2 block text-sm font-medium">Message</label>
-              <Textarea placeholder="Write your message here..." rows={6} className="bg-background" />
+              <label htmlFor="contact-message" className="mb-2 block text-sm font-medium">Message</label>
+              <Textarea id="contact-message" placeholder="Write your message here..." rows={6} className="bg-background" />
             </div>
             <Button variant="hero" className="w-full">
               <Mail className="mr-2 h-4 w-4" /> Send Message
