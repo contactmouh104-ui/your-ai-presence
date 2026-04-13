@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav aria-label="Main navigation">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2">
-          <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="ShoNow Logo" <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="ShoNow Logo" className="h-14 w-auto" /> />
+          <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="ShoNow Logo" className="h-14 w-auto" />
         </Link>
 
         {/* Desktop links */}
