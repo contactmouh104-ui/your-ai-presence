@@ -1,10 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 
 const Disclaimer = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEOHead
+        title="Disclaimer - Affiliate & Earnings Disclosure"
+        description="Read ShoNow's disclaimer including affiliate disclosure, earnings disclaimer, and product review policies. Transparency is our priority."
+        canonical="https://shonow.online/disclaimer"
+      />
       <Navbar />
       <main className="container mx-auto px-4 py-16">
         <div className="mx-auto max-w-3xl prose prose-invert">
