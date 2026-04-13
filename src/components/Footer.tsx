@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-4 text-center">
           <Link to="/" className="flex items-center gap-2">
-            <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="ShoNow Logo" className="h-10 w-auto" />
+            <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="ShoNow Logo" <img src="https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp" alt="ShoNow Logo" className="h-12 w-auto" /> />
           </Link>
           <p className="max-w-md text-sm text-muted-foreground">
             World's Largest AI Tool Directory. Discover, compare, and find the best AI tools for your needs.
