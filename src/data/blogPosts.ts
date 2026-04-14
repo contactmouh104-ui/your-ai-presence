@@ -447,7 +447,7 @@ For businesses drowning in operational overhead, the ROI is compelling and the i
     featured: false,
     affiliateLink: "https://jvz9.com/c/3468163/433243",
     productName: "Copy Paste Millionaire Bot",
-    image: "https://images.unsplash.com/photo-1553729459-uj4gwkx4f840?w=800&q=80",
+    image: "/images/asset-14.jpg",
     content: `
 ## Let's Address the Elephant in the Room
 
@@ -964,7 +964,7 @@ For new entrepreneurs, budget-conscious businesses, and anyone suffering from Sa
     featured: false,
     affiliateLink: "https://jvz9.com/c/3468163/431009",
     productName: "StreetSpeak AI",
-    image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80",
+    image: "/images/asset-16.webp",
     content: `
 ## The Uncomfortable Truth About Video Content in 2026
 
