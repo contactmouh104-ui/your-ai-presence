@@ -16,7 +16,7 @@ interface SEOHeadProps {
 }
 
 const SITE_URL = "https://shonow.online";
-const DEFAULT_OG_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/zIAJFP6IfiT9cv6LtYbr81Jpxdn2/social-images/social-1775759376839-ShoNow.webp";
+const DEFAULT_OG_IMAGE = "/images/asset-17.webp";
 
 const SEOHead = ({ title, description, canonical, ogImage, ogType = "website", article }: SEOHeadProps) => {
   const fullTitle = title.includes("ShoNow") ? title : `${title} | ShoNow`;
@@ -82,7 +82,7 @@ const SEOHead = ({ title, description, canonical, ogImage, ogType = "website", a
               name: "ShoNow",
               logo: {
                 "@type": "ImageObject",
-                url: "https://img.sanishtech.com/u/246d5b0f83797ed3687c0a000fe92819.webp",
+                url: "/images/asset-15.webp",
               },
             },
             description: article.description,

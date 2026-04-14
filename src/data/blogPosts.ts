@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     featured: true,
     affiliateLink: "https://jvz1.com/c/3468163/413369",
     productName: "AIfluencers Premium",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    image: "/images/asset-13.jpg",
     content: `
 ## The $21 Billion Problem Nobody's Talking About
 
@@ -117,7 +117,7 @@ After extensive testing, we can confidently say that AIfluencers Premium deliver
     featured: false,
     affiliateLink: "https://jvz9.com/c/3468163/433915",
     productName: "Imimic",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+    image: "/images/asset-5.jpg",
     content: `
 ## The Content Treadmill Is Killing Your Business
 
@@ -227,7 +227,7 @@ For content-heavy businesses, the ROI is almost immediate. Our cost per piece of
     featured: false,
     affiliateLink: "https://jvz9.com/c/3468163/432379",
     productName: "ReddifyAI Infinity",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    image: "/images/asset-4.jpg",
     content: `
 ## The Platform Marketers Keep Ignoring (At Their Own Peril)
 
@@ -342,7 +342,7 @@ The ROI potential is exceptional, particularly for businesses in niches with act
     featured: false,
     affiliateLink: "https://jvz9.com/c/3468163/433849",
     productName: "Hyperion",
-    image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&q=80",
+    image: "/images/asset-7.jpg",
     content: `
 ## You're Working In Your Business, Not On It (And It's Costing You Everything)
 
@@ -581,7 +581,7 @@ It won't make you a millionaire overnight (nothing will), but it provides a legi
     featured: false,
     affiliateLink: "https://jvz9.com/c/3468163/430967",
     productName: "AI Cash Clone",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+    image: "/images/asset-11.jpg",
     content: `
 ## The Instagram Money Machine You Haven't Heard About
 
@@ -712,7 +712,7 @@ Our 60-day test produced nearly $4,000 in revenue from a brand-new account, with
     featured: false,
     affiliateLink: "https://jvz9.com/c/3468163/431973",
     productName: "Breakout AI",
-    image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80",
+    image: "/images/asset-12.jpg",
     content: `
 ## The Data Gold Rush Nobody's Talking About
 
@@ -840,7 +840,7 @@ The key to success with this tool is discipline — filtering for high-confidenc
     featured: false,
     affiliateLink: "https://jvz9.com/c/3468163/430927",
     productName: "NY BundleApps",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    image: "/images/asset-9.jpg",
     content: `
 ## The SaaS Tax Is Crushing Small Businesses
 
@@ -1102,7 +1102,7 @@ Is it the same as building a deeply personal brand through original content? No.
     featured: false,
     affiliateLink: "https://jvz8.com/c/3468163/423307",
     productName: "7-Figure Accelerator",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    image: "/images/asset-6.jpg",
     content: `
 ## The 7-Figure Question Everyone's Asking
 
