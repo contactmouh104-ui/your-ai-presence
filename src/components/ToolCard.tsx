@@ -1,5 +1,6 @@
 import { Heart, ExternalLink, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SafeImage from "@/components/SafeImage";
 
 export interface Tool {
   id: number;
@@ -33,8 +34,8 @@ const StarRating = ({ rating = 0 }: { rating?: number }) => {
             i < fullStars
               ? "fill-accent text-accent"
               : i === fullStars && hasHalf
-              ? "fill-accent/50 text-accent"
-              : "text-muted-foreground/30"
+                ? "fill-accent/50 text-accent"
+                : "text-muted-foreground/30"
           }`}
         />
       ))}
@@ -48,16 +49,20 @@ const StarRating = ({ rating = 0 }: { rating?: number }) => {
 const ToolCard = ({ tool }: { tool: Tool }) => {
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-[var(--card-hover-shadow)]">
-      {/* Banner */}
       <div
         className="relative flex h-28 items-center justify-center overflow-hidden"
         style={{ background: tool.image ? undefined : tool.color }}
       >
         {tool.image && (
-          <img src={tool.image} alt={tool.name} className="absolute inset-0 h-full w-full object-cover" />
+          <SafeImage
+            src={tool.image}
+            alt={tool.name}
+            className="absolute inset-0 h-full w-full object-cover"
+            fallbackLabel={tool.name}
+          />
         )}
         {tool.featured && (
-          <span className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-background/80 px-2 py-0.5 text-[10px] font-medium text-foreground backdrop-blur-sm z-10">
+          <span className="absolute left-2 top-2 z-10 flex items-center gap-1 rounded-full bg-background/80 px-2 py-0.5 text-[10px] font-medium text-foreground backdrop-blur-sm">
             <Star className="h-2.5 w-2.5 text-accent" /> Featured
           </span>
         )}
@@ -66,7 +71,6 @@ const ToolCard = ({ tool }: { tool: Tool }) => {
         )}
       </div>
 
-      {/* Body */}
       <div className="flex flex-1 flex-col p-3">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2">
@@ -90,11 +94,11 @@ const ToolCard = ({ tool }: { tool: Tool }) => {
           <StarRating rating={tool.rating} />
         </div>
 
-        <p className="mt-2 flex-1 text-xs leading-relaxed text-muted-foreground line-clamp-2">
+        <p className="mt-2 flex-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
           {tool.description}
         </p>
 
-        <Button variant="hero" size="sm" className="mt-3 w-full gap-1.5 text-xs h-8" asChild={!!tool.link}>
+        <Button variant="hero" size="sm" className="mt-3 h-8 w-full gap-1.5 text-xs" asChild={!!tool.link}>
           {tool.link ? (
             <a href={tool.link} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-3 w-3" /> Visit

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SafeImage from "@/components/SafeImage";
 
 const Footer = () => {
   return (
@@ -6,7 +7,12 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center gap-4 text-center">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/logo.webp" alt="ShoNow Logo" className="h-12 w-auto" loading="lazy" />
+            <SafeImage
+              src="/logo.webp"
+              alt="ShoNow Logo"
+              className="h-12 w-auto"
+              fallbackLabel="ShoNow"
+            />
           </Link>
           <p className="max-w-md text-sm text-muted-foreground">
             World's Largest AI Tool Directory. Discover, compare, and find the best AI tools for your needs.

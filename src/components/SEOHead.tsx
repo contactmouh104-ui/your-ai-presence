@@ -18,10 +18,16 @@ interface SEOHeadProps {
 const SITE_URL = "https://shonow.online";
 const DEFAULT_OG_IMAGE = "/images/asset-17.webp";
 
+const toAbsoluteUrl = (url?: string) => {
+  if (!url) return SITE_URL;
+  if (url.startsWith("http://") || url.startsWith("https://")) return url;
+  return `${SITE_URL}${url.startsWith("/") ? url : `/${url}`}`;
+};
+
 const SEOHead = ({ title, description, canonical, ogImage, ogType = "website", article }: SEOHeadProps) => {
   const fullTitle = title.includes("ShoNow") ? title : `${title} | ShoNow`;
-  const canonicalUrl = canonical || SITE_URL;
-  const image = ogImage || DEFAULT_OG_IMAGE;
+  const canonicalUrl = toAbsoluteUrl(canonical || SITE_URL);
+  const image = toAbsoluteUrl(ogImage || DEFAULT_OG_IMAGE);
 
   return (
     <Helmet>
@@ -29,7 +35,6 @@ const SEOHead = ({ title, description, canonical, ogImage, ogType = "website", a
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
 
-      {/* Open Graph */}
       <meta property="og:type" content={ogType} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
@@ -38,14 +43,12 @@ const SEOHead = ({ title, description, canonical, ogImage, ogType = "website", a
       <meta property="og:site_name" content="ShoNow" />
       <meta property="og:locale" content="en_US" />
 
-      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@ShoNow" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
 
-      {/* JSON-LD WebSite Schema (non-article pages) */}
       {!article && (
         <script type="application/ld+json">
           {JSON.stringify({
@@ -63,14 +66,13 @@ const SEOHead = ({ title, description, canonical, ogImage, ogType = "website", a
         </script>
       )}
 
-      {/* JSON-LD Article Schema */}
       {article && (
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
             headline: article.headline,
-            image: article.image,
+            image: toAbsoluteUrl(article.image),
             datePublished: article.datePublished,
             dateModified: article.datePublished,
             author: {
@@ -82,7 +84,7 @@ const SEOHead = ({ title, description, canonical, ogImage, ogType = "website", a
               name: "ShoNow",
               logo: {
                 "@type": "ImageObject",
-                url: "/images/asset-15.webp",
+                url: toAbsoluteUrl("/logo.webp"),
               },
             },
             description: article.description,
