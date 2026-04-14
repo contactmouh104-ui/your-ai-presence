@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
+import SafeImage from "@/components/SafeImage";
 
 const NewsletterCard = () => {
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden rounded-xl border border-border bg-card p-8 text-center">
-      <img src="/logo.webp" alt="ShoNow" className="mb-4 h-12 w-auto" loading="lazy" />
+      <SafeImage
+        src="/logo.webp"
+        alt="ShoNow"
+        className="mb-4 h-12 w-auto"
+        fallbackLabel="ShoNow"
+      />
       <h3 className="font-heading text-lg font-bold text-foreground">
         JOIN 30,000+ AI ENTHUSIASTS
       </h3>

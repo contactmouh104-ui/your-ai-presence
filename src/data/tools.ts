@@ -5,7 +5,7 @@ const tools: Tool[] = [
     id: 1, name: "ChatGPT", category: "Chatbot", description: "OpenAI's advanced conversational AI for writing, coding, research, and creative tasks — now with GPT-5 multimodal capabilities.", pricing: "Freemium", featured: true, color: "linear-gradient(135deg, hsl(160 40% 18%), hsl(170 40% 22%))", initial: "CG",
   },
   {
-    id: 2, name: "7-Figure Accelerator Payment Plan", category: "Money Making", description: "This structure helps reduce wasted effort, shorten sales cycles, and support revenue milestones from $100,000 to $1,500,000 per month.", pricing: "Paid", featured: true, color: "linear-gradient(135deg, hsl(25 60% 18%), hsl(35 50% 24%))", initial: "7F", image: "https://image2url.com/r2/default/images/1775758556617-e828c51b-a2ce-4805-ad18-60ecc56be536.png", link: "https://jvz4.com/c/3468163/423307",
+    id: 2, name: "7-Figure Accelerator Payment Plan", category: "Money Making", description: "This structure helps reduce wasted effort, shorten sales cycles, and support revenue milestones from $100,000 to $1,500,000 per month.", pricing: "Paid", featured: true, color: "linear-gradient(135deg, hsl(25 60% 18%), hsl(35 50% 24%))", initial: "7F", link: "https://jvz4.com/c/3468163/423307",
   },
   {
     id: 3, name: "Gemini", category: "AI Assistant", description: "Google's natively multimodal AI that seamlessly processes text, images, audio, and video for powerful cross-modal reasoning.", pricing: "Freemium", featured: true, color: "linear-gradient(135deg, hsl(210 50% 18%), hsl(230 50% 24%))", initial: "GE",
