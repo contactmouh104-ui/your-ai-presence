@@ -2,7 +2,23 @@ import type { Tool } from "@/components/ToolCard";
 
 const tools: Tool[] = [
   {
-    id: 1, name: "ChatGPT", category: "Chatbot", description: "OpenAI's advanced conversational AI for writing, coding, research, and creative tasks — now with GPT-5 multimodal capabilities.", pricing: "Freemium", featured: true, color: "linear-gradient(135deg, hsl(160 40% 18%), hsl(170 40% 22%))", initial: "CG",
+    id: 1,
+    name: "SerpSling AI Bundle",
+    category: "SEO",
+    description: "By Joshua Zamora — 3-in-1 web app for FAST Page 1 Google & YouTube rankings with pin-point keyword difficulty scoring and full competitor analysis.",
+    pricing: "Paid",
+    featured: true,
+    color: "linear-gradient(135deg, hsl(160 40% 18%), hsl(170 40% 22%))",
+    initial: "SS",
+    image: "https://img.sanishtech.com/u/9b4a1c7621a6466d373fe9276f2c4a46.png",
+    rating: 4.9,
+    modal: {
+      title: "SerpSling AI Bundle - The Ultimate SEO Ranking Solution",
+      description:
+        "NEW, 3-in-1, Web-App Allows You To Get FAST Page 1 Rankings (that STICK for the long-term) By Finding And Analyzing Profit-Producing Keywords FOR YOU - with PIN-POINT Difficulty Scoring... PLUS FULLY-Exposes Your Competitors Ranking Strategy So You Can Get FREE, Targeted BUYER-Traffic From Google And YouTube At Record Speed!",
+      ctaLabel: "Get Instant Access to SerpSling AI Now",
+      ctaLink: "https://jvz3.com/c/3468163/435535/",
+    },
   },
   {
     id: 2, name: "7-Figure Accelerator Payment Plan", category: "Money Making", description: "This structure helps reduce wasted effort, shorten sales cycles, and support revenue milestones from $100,000 to $1,500,000 per month.", pricing: "Paid", featured: true, color: "linear-gradient(135deg, hsl(25 60% 18%), hsl(35 50% 24%))", initial: "7F", link: "https://jvz4.com/c/3468163/423307",
