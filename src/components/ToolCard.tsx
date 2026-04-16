@@ -1,6 +1,21 @@
-import { Heart, ExternalLink, Star } from "lucide-react";
+import { useState } from "react";
+import { Heart, ExternalLink, Star, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SafeImage from "@/components/SafeImage";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+export interface ToolModal {
+  title: string;
+  description: string;
+  ctaLabel: string;
+  ctaLink: string;
+}
 
 export interface Tool {
   id: number;
@@ -14,6 +29,7 @@ export interface Tool {
   rating?: number;
   image?: string;
   link?: string;
+  modal?: ToolModal;
 }
 
 const pricingColors: Record<string, string> = {
@@ -47,6 +63,7 @@ const StarRating = ({ rating = 0 }: { rating?: number }) => {
 };
 
 const ToolCard = ({ tool }: { tool: Tool }) => {
+  const [open, setOpen] = useState(false);
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-[var(--card-hover-shadow)]">
       <div
@@ -98,16 +115,71 @@ const ToolCard = ({ tool }: { tool: Tool }) => {
           {tool.description}
         </p>
 
-        <Button variant="hero" size="sm" className="mt-3 h-8 w-full gap-1.5 text-xs" asChild={!!tool.link}>
-          {tool.link ? (
-            <a href={tool.link} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-3 w-3" /> Visit
-            </a>
-          ) : (
-            <><ExternalLink className="h-3 w-3" /> Visit</>
-          )}
-        </Button>
+        {tool.modal ? (
+          <Button
+            variant="hero"
+            size="sm"
+            className="mt-3 h-8 w-full gap-1.5 text-xs"
+            onClick={() => setOpen(true)}
+          >
+            <ExternalLink className="h-3 w-3" /> Visit
+          </Button>
+        ) : (
+          <Button variant="hero" size="sm" className="mt-3 h-8 w-full gap-1.5 text-xs" asChild={!!tool.link}>
+            {tool.link ? (
+              <a href={tool.link} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="h-3 w-3" /> Visit
+              </a>
+            ) : (
+              <><ExternalLink className="h-3 w-3" /> Visit</>
+            )}
+          </Button>
+        )}
       </div>
+
+      {tool.modal && (
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogContent className="max-w-lg border-border bg-card sm:max-w-xl">
+            {tool.image && (
+              <div className="-mx-6 -mt-6 mb-2 h-40 overflow-hidden rounded-t-lg border-b border-border">
+                <SafeImage
+                  src={tool.image}
+                  alt={tool.modal.title}
+                  className="h-full w-full object-cover"
+                  fallbackLabel={tool.name}
+                />
+              </div>
+            )}
+            <DialogHeader className="text-left">
+              <div className="mb-2 inline-flex w-fit items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-accent">
+                <Sparkles className="h-3 w-3" /> Featured Offer
+              </div>
+              <DialogTitle className="font-heading text-xl leading-snug text-foreground sm:text-2xl">
+                {tool.modal.title}
+              </DialogTitle>
+              <DialogDescription className="pt-2 text-sm leading-relaxed text-muted-foreground">
+                {tool.modal.description}
+              </DialogDescription>
+            </DialogHeader>
+            <Button
+              variant="hero"
+              size="lg"
+              className="mt-2 h-12 w-full gap-2 text-sm font-semibold"
+              asChild
+            >
+              <a
+                href={tool.modal.ctaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                <ExternalLink className="h-4 w-4" />
+                {tool.modal.ctaLabel}
+              </a>
+            </Button>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 };
