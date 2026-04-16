@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SafeImage from "@/components/SafeImage";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -19,12 +18,11 @@ const Navbar = () => {
       <nav aria-label="Main navigation">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link to="/" className="flex items-center gap-2">
-            <SafeImage
+            <img
               src="/logo.webp"
               alt="ShoNow Logo"
               className="h-14 w-auto"
               loading="eager"
-              fallbackLabel="ShoNow"
             />
           </Link>
 
