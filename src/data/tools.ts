@@ -10,7 +10,7 @@ const tools: Tool[] = [
     featured: true,
     color: "linear-gradient(135deg, hsl(160 40% 18%), hsl(170 40% 22%))",
     initial: "SS",
-    image: "https://img.sanishtech.com/u/9b4a1c7621a6466d373fe9276f2c4a46.png",
+    image: "https://shonow.online/images/shonowblog%20(1).webp",
     rating: 4.9,
     modal: {
       title: "SerpSling AI Bundle - The Ultimate SEO Ranking Solution",
