@@ -1,3 +1,5 @@
+
+import emailjs from '@emailjs/browser';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -7,6 +9,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const Contact = () => {
+    const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_c33yqnj', 'template_v48hhua', e.target, '8DmUl9-sUIVZAfAcD')
+      .then((result) => {
+          console.log('SUCCESS!', result.text);
+          alert("Message Sent!");
+      }, (error) => {
+          console.log('FAILED...', error.text);
+      });
+  };
+  
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
@@ -22,9 +36,8 @@ const Contact = () => {
             <h1 className="font-heading text-4xl font-bold">Contact Us</h1>
             <p className="mt-2 text-muted-foreground">Have a question or suggestion? We'd love to hear from you.</p>
           </div>
+<form className="space-y-6 rounded-xl border border-border bg-card p-8" onSubmit={sendEmail}>
 
-          <form className="space-y-6 rounded-xl border border-border bg-card p-8" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="contact-name" className="mb-2 block text-sm font-medium">Name</label>
                 <Input id="contact-name" placeholder="Your name" className="bg-background" />
