@@ -19,7 +19,6 @@ const Contact = () => {
           console.log('FAILED...', error.text);
       });
   };
-  
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
