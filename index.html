@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explosive Content & Sales Plan — JVZoo AI Affiliate Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080a0f;
+    --surface: #0d1117;
+    --card: #111827;
+    --border: #1f2937;
+    --accent1: #f59e0b;
+    --accent2: #10b981;
+    --accent3: #3b82f6;
+    --accent4: #ec4899;
+    --accent5: #8b5cf6;
+    --text: #f9fafb;
+    --muted: #9ca3af;
+    --dim: #6b7280;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    padding: 80px 40px 60px;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(245,158,11,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(16,185,129,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 40% at 80% 80%, rgba(59,130,246,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(245,158,11,0.12);
+    border: 1px solid rgba(245,158,11,0.3);
+    color: var(--accent1);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 96px);
+    letter-spacing: 3px;
+    line-height: 0.95;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f59e0b 50%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 640px;
+    margin: 0 auto 40px;
+    font-weight: 400;
+  }
+
+  .stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--accent1);
+    letter-spacing: 2px;
+    display: block;
+  }
+  .stat-label { font-size: 11px; color: var(--dim); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* LAYOUT */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent2);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    line-height: 1;
+  }
+
+  /* TOP 5 PRODUCTS */
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+  .product-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .product-card:hover { transform: translateY(-3px); }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .product-card.gold::before { background: var(--accent1); border-color: rgba(245,158,11,0.2); }
+  .product-card.gold:hover { border-color: rgba(245,158,11,0.4); }
+  .product-card.green::before { background: var(--accent2); }
+  .product-card.green:hover { border-color: rgba(16,185,129,0.4); }
+  .product-card.blue::before { background: var(--accent3); }
+  .product-card.blue:hover { border-color: rgba(59,130,246,0.4); }
+  .product-card.pink::before { background: var(--accent4); }
+  .product-card.pink:hover { border-color: rgba(236,72,153,0.4); }
+  .product-card.purple::before { background: var(--accent5); }
+  .product-card.purple:hover { border-color: rgba(139,92,246,0.4); }
+
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+
+  .rank-badge.gold { background: rgba(245,158,11,0.15); color: var(--accent1); }
+  .rank-badge.green { background: rgba(16,185,129,0.15); color: var(--accent2); }
+  .rank-badge.blue { background: rgba(59,130,246,0.15); color: var(--accent3); }
+  .rank-badge.pink { background: rgba(236,72,153,0.15); color: var(--accent4); }
+  .rank-badge.purple { background: rgba(139,92,246,0.15); color: var(--accent5); }
+
+  .product-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .product-hook {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .viral-score {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .score-label { font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
+  .score-bar { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 2px; transition: width 1s ease; }
+  .score-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+
+  .product-link {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--dim);
+    text-decoration: none;
+    word-break: break-all;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: color 0.2s;
+  }
+  .product-link:hover { color: var(--text); }
+
+  /* HOOKS */
+  .hooks-list { display: flex; flex-direction: column; gap: 20px; }
+
+  .hook-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 24px;
+    align-items: start;
+    transition: border-color 0.2s;
+  }
+
+  .hook-card:hover { border-color: rgba(245,158,11,0.3); }
+
+  .hook-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--accent1);
+    line-height: 1;
+    opacity: 0.6;
+  }
+
+  .hook-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .hook-text {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .hook-why { font-size: 13px; color: var(--dim); font-style: italic; }
+
+  /* SCRIPTS */
+  .scripts-list { display: flex; flex-direction: column; gap: 28px; }
+
+  .script-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .script-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .script-title { font-size: 15px; font-weight: 700; }
+  .script-duration {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: rgba(16,185,129,0.12);
+    color: var(--accent2);
+    border: 1px solid rgba(16,185,129,0.2);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .script-body { padding: 28px; }
+
+  .aida-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .aida-step {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px;
+  }
+
+  .aida-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .aida-label.A { color: var(--accent1); }
+  .aida-label.I { color: var(--accent3); }
+  .aida-label.D { color: var(--accent4); }
+  .aida-label.Act { color: var(--accent2); }
+
+  .aida-content { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  .full-script {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent1);
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text);
+    white-space: pre-wrap;
+    font-style: italic;
+  }
+
+  /* STEALTH STRATEGY */
+  .stealth-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+  .stealth-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .stealth-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .stealth-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+
+  .stealth-body { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .stealth-body strong { color: var(--text); }
+
+  /* SEO / HASHTAGS */
+  .seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  @media (max-width: 700px) {
+    .seo-grid { grid-template-columns: 1fr; }
+    .hook-card { grid-template-columns: 1fr; }
+    .hook-num { font-size: 32px; }
+    .aida-block { grid-template-columns: 1fr 1fr; }
+    .hero { padding: 60px 20px 40px; }
+    .stats-row { gap: 20px; }
+  }
+
+  .keyword-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .keyword-box h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .tag {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+    cursor: default;
+  }
+
+  .tag.yellow { background: rgba(245,158,11,0.1); color: var(--accent1); border: 1px solid rgba(245,158,11,0.2); }
+  .tag.green { background: rgba(16,185,129,0.1); color: var(--accent2); border: 1px solid rgba(16,185,129,0.2); }
+  .tag.blue { background: rgba(59,130,246,0.1); color: var(--accent3); border: 1px solid rgba(59,130,246,0.2); }
+  .tag.pink { background: rgba(236,72,153,0.1); color: var(--accent4); border: 1px solid rgba(236,72,153,0.2); }
+  .tag.purple { background: rgba(139,92,246,0.1); color: var(--accent5); border: 1px solid rgba(139,92,246,0.2); }
+
+  /* BRANDING */
+  .brand-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+
+  .flow-step {
+    padding: 28px;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+
+  .flow-step:last-child { border-right: none; }
+
+  .flow-step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--border);
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    line-height: 1;
+  }
+
+  .flow-step-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+  .flow-step-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .flow-step-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  .tip-box {
+    background: rgba(245,158,11,0.05);
+    border: 1px solid rgba(245,158,11,0.2);
+    border-left: 4px solid var(--accent1);
+    border-radius: 8px;
+    padding: 20px 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .tip-box strong { color: var(--accent1); }
+
+  /* FOOTER */
+  footer {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  footer p { font-size: 12px; color: var(--dim); margin-bottom: 6px; }
+  footer strong { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="badge">🔥 2026 AI Affiliate Playbook — Tier-1 Markets</div>
+  <h1>Explosive Content<br>&amp; Sales Plan</h1>
+  <p class="hero-sub">A World-Class Instagram Reels + SEO strategy for your JVZoo AI affiliate portfolio — engineered to generate viral traffic and long-term financial freedom income.</p>
+  <div class="stats-row">
+    <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Viral Reels Hooks</span></div>
+    <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">25-Sec Scripts</span></div>
+    <div class="stat-item"><span class="stat-num">3</span><span class="stat-label">Stealth Link Tactics</span></div>
+    <div class="stat-item"><span class="stat-num">60+</span><span class="stat-label">SEO Keywords</span></div>
+  </div>
+</div>
+
+<!-- ═══ TOP 5 PRODUCTS ═══ -->
+<section>
+<div class="container">
+  <p class="section-label">Step 01 — Product Selection</p>
+  <h2 class="section-title">Top 5 Products by Viral Potential</h2>
+
+  <div class="products-grid">
+
+    <!-- #1 Breakout AI -->
+    <div class="product-card gold">
+      <div class="rank-badge gold">🏆 RANK #1 — VIRAL KING</div>
+      <div class="product-name">Breakout AI</div>
+      <p class="product-hook">The $25,828 newbie case study is the single most powerful conversion story in this portfolio. Real numbers = real trust = explosive shares.</p>
+      <div class="viral-score">
+        <span class="score-label">Viral</span>
+        <div class="score-bar"><div class="score-fill" style="width:97%;background:var(--accent1)"></div></div>
+        <span class="score-num" style="color:var(--accent1)">97</span>
+      </div>
+      <a class="product-link" href="https://jvz9.com/c/3468163/431973" target="_blank">🔗 jvz9.com/c/3468163/431973</a>
+    </div>
+
+    <!-- #2 StreetSpeak AI -->
+    <div class="product-card green">
+      <div class="rank-badge green">🥈 RANK #2 — CONTENT ENGINE</div>
+      <div class="product-name">StreetSpeak AI</div>
+      <p class="product-hook">10,000+ DFY viral videos is an insane hook. It solves the #1 creator pain point: running out of content. Infinite content = infinite reach.</p>
+      <div class="viral-score">
+        <span class="score-label">Viral</span>
+        <div class="score-bar"><div class="score-fill" style="width:92%;background:var(--accent2)"></div></div>
+        <span class="score-num" style="color:var(--accent2)">92</span>
+      </div>
+      <a class="product-link" href="https://jvz9.com/c/3468163/431009" target="_blank">🔗 jvz9.com/c/3468163/431009</a>
+    </div>
+
+    <!-- #3 AI Cash Clone -->
+    <div class="product-card blue">
+      <div class="rank-badge blue">🥉 RANK #3 — IG AUTOMATION</div>
+      <div class="product-name">AI Cash Clone</div>
+      <p class="product-hook">Instagram automation + sales system on autopilot. The IG audience you're targeting LIVES on Instagram — meeting them where they are is a cheat code.</p>
+      <div class="viral-score">
+        <span class="score-label">Viral</span>
+        <div class="score-bar"><div class="score-fill" style="width:88%;background:var(--accent3)"></div></div>
+        <span class="score-num" style="color:var(--accent3)">88</span>
+      </div>
+      <a class="product-link" href="https://jvz9.com/c/3468163/430967" target="_blank">🔗 jvz9.com/c/3468163/430967</a>
+    </div>
+
+    <!-- #4 7-Figure Accelerator -->
+    <div class="product-card pink">
+      <div class="rank-badge pink">🔥 RANK #4 — HIGH TICKET</div>
+      <div class="product-name">7-Figure Accelerator</div>
+      <p class="product-hook">"Done-For-You high-ticket business" is the dream of every side-hustle seeker. Premium positioning + payment plan makes it accessible and aspirational.</p>
+      <div class="viral-score">
+        <span class="score-label">Viral</span>
+        <div class="score-bar"><div class="score-fill" style="width:85%;background:var(--accent4)"></div></div>
+        <span class="score-num" style="color:var(--accent4)">85</span>
+      </div>
+      <a class="product-link" href="https://jvz8.com/c/3468163/423307" target="_blank">🔗 jvz8.com/c/3468163/423307</a>
+    </div>
+
+    <!-- #5 AIfluencers Premium -->
+    <div class="product-card purple">
+      <div class="rank-badge purple">⚡ RANK #5 — FUTURE-PROOF</div>
+      <div class="product-name">AIfluencers Premium</div>
+      <p class="product-hook">Virtual AI influencers are THE trending topic of 2026. This taps into massive curiosity — "AI doing the influencing for you" is mind-blowing content on its own.</p>
+      <div class="viral-score">
+        <span class="score-label">Viral</span>
+        <div class="score-bar"><div class="score-fill" style="width:82%;background:var(--accent5)"></div></div>
+        <span class="score-num" style="color:var(--accent5)">82</span>
+      </div>
+      <a class="product-link" href="https://jvz1.com/c/3468163/413369" target="_blank">🔗 jvz1.com/c/3468163/413369</a>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ═══ HOOKS ═══ -->
+<section>
+<div class="container">
+  <p class="section-label">Step 02 — Pattern Interrupt</p>
+  <h2 class="section-title">5 Viral Reels Hooks<br><span style="color:var(--muted);font-size:60%">(Stop-the-Scroll in 2 Seconds)</span></h2>
+
+  <div class="hooks-list">
+
+    <div class="hook-card">
+      <div class="hook-num">01</div>
+      <div>
+        <div class="hook-tag">Breakout AI — Proof Hook</div>
+        <div class="hook-text">"This dude made $25,828 in 30 days with an AI tool most people have never heard of. I'm showing you exactly what he used."</div>
+        <div class="hook-why">💡 Why it works: Specific dollar amount creates instant curiosity. The word "exactly" promises value. "Most people never heard of" triggers FOMO.</div>
+      </div>
+    </div>
+
+    <div class="hook-card">
+      <div class="hook-num">02</div>
+      <div>
+        <div class="hook-tag">StreetSpeak AI — Volume Shock</div>
+        <div class="hook-text">"What if you had 10,000 viral videos ready to post RIGHT NOW — without filming a single second of footage?"</div>
+        <div class="hook-why">💡 Why it works: The number 10,000 is shocking. "RIGHT NOW" adds urgency. "Without filming" removes the #1 barrier creators face.</div>
+      </div>
+    </div>
+
+    <div class="hook-card">
+      <div class="hook-num">03</div>
+      <div>
+        <div class="hook-tag">AI Cash Clone — Lifestyle Contrast</div>
+        <div class="hook-text">"POV: You wake up to Instagram sending you sales notifications while you were sleeping. That's what AI Cash Clone does for 9-to-5 escapees."</div>
+        <div class="hook-why">💡 Why it works: The "POV" format is native to Reels. "While you were sleeping" is the classic passive income dream made real. Targets the 9-to-5 escapee identity.</div>
+      </div>
+    </div>
+
+    <div class="hook-card">
+      <div class="hook-num">04</div>
+      <div>
+        <div class="hook-tag">7-Figure Accelerator — Authority Challenge</div>
+        <div class="hook-text">"Stop building a business the hard way. This AI just built me a 7-figure system in 48 hours. Here's the unfiltered truth."</div>
+        <div class="hook-why">💡 Why it works: "Stop" is a commanding word that disrupts autopilot scrolling. "48 hours" is impossibly fast — which creates disbelief → curiosity. "Unfiltered truth" signals authenticity.</div>
+      </div>
+    </div>
+
+    <div class="hook-card">
+      <div class="hook-num">05</div>
+      <div>
+        <div class="hook-tag">AIfluencers Premium — Trend Shock</div>
+        <div class="hook-text">"AI influencers are stealing real people's brand deals in 2026 — and you can deploy your own virtual ambassador RIGHT NOW for free traffic."</div>
+        <div class="hook-why">💡 Why it works: "Stealing" is an emotional trigger word. Positions the viewer as losing ground if they don't act. "Virtual ambassador" sounds futuristic and aspirational.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ═══ SCRIPTS ═══ -->
+<section>
+<div class="container">
+  <p class="section-label">Step 03 — AIDA Reel Scripts</p>
+  <h2 class="section-title">5 Under-25-Second Scripts</h2>
+
+  <div class="scripts-list">
+
+    <!-- Script 1 -->
+    <div class="script-card">
+      <div class="script-header">
+        <div class="script-title">🏆 Script #1 — Breakout AI</div>
+        <div class="script-duration">⏱ ~22 seconds</div>
+      </div>
+      <div class="script-body">
+        <div class="aida-block">
+          <div class="aida-step"><div class="aida-label A">A — Attention</div><div class="aida-content">Dollar amount + time frame shock. Specific = credible.</div></div>
+          <div class="aida-step"><div class="aida-label I">I — Interest</div><div class="aida-content">Explain it's AI-powered and newbie-friendly. No tech skills needed.</div></div>
+          <div class="aida-step"><div class="aida-label D">D — Desire</div><div class="aida-content">Paint the lifestyle: "Imagine waking up to commissions."</div></div>
+          <div class="aida-step"><div class="aida-label Act">A — Action</div><div class="aida-content">DM the keyword. Simple, low-friction next step.</div></div>
+        </div>
+        <div class="full-script">"A regular dude — no experience, no list, no following — just made twenty-five thousand dollars in one month using a single AI tool.
+
+Breakout AI does the heavy lifting FOR you. It finds the buyers. It closes the sales. It runs 24/7.
+
+Picture yourself checking your phone tomorrow morning and seeing a commission notification before your coffee's done.
+
+DM me the word BREAKOUT right now and I'll send you the full case study for free."</div>
+      </div>
+    </div>
+
+    <!-- Script 2 -->
+    <div class="script-card">
+      <div class="script-header">
+        <div class="script-title">🎬 Script #2 — StreetSpeak AI</div>
+        <div class="script-duration">⏱ ~20 seconds</div>
+      </div>
+      <div class="script-body">
+        <div class="aida-block">
+          <div class="aida-step"><div class="aida-label A">A — Attention</div><div class="aida-content">The volume number is the pattern interrupt. 10,000 is impossible to ignore.</div></div>
+          <div class="aida-step"><div class="aida-label I">I — Interest</div><div class="aida-content">Reveal how DFY videos work: pre-made, viral-optimized, post instantly.</div></div>
+          <div class="aida-step"><div class="aida-label D">D — Desire</div><div class="aida-content">Consistency = growth = money. Connect the dots fast.</div></div>
+          <div class="aida-step"><div class="aida-label Act">A — Action</div><div class="aida-content">Bridge page link in bio. Low resistance.</div></div>
+        </div>
+        <div class="full-script">"Ten. Thousand. Done-for-you viral videos. Ready to post today.
+
+StreetSpeak AI hands you a library of 10,000-plus short-form videos — already optimized, already formatted, just schedule and post.
+
+Consistency is the algorithm's love language. More posts equals more reach equals more income. Simple math.
+
+Tap the link in my bio to get instant access before the price jumps."</div>
+      </div>
+    </div>
+
+    <!-- Script 3 -->
+    <div class="script-card">
+      <div class="script-header">
+        <div class="script-title">📱 Script #3 — AI Cash Clone</div>
+        <div class="script-duration">⏱ ~23 seconds</div>
+      </div>
+      <div class="script-body">
+        <div class="aida-block">
+          <div class="aida-step"><div class="aida-label A">A — Attention</div><div class="aida-content">Call out the platform they're on. Meta and native = trust.</div></div>
+          <div class="aida-step"><div class="aida-label I">I — Interest</div><div class="aida-content">Explain Instagram automation in plain English. No jargon.</div></div>
+          <div class="aida-step"><div class="aida-label D">D — Desire</div><div class="aida-content">Highlight the biggest benefit: time freedom, not just money.</div></div>
+          <div class="aida-step"><div class="aida-label Act">A — Action</div><div class="aida-content">DM keyword with urgency trigger.</div></div>
+        </div>
+        <div class="full-script">"You're on Instagram right now — which means you're already in the right place to make money.
+
+AI Cash Clone turns your Instagram account into an automated sales machine. It finds your ideal customers, sends them personalized messages, and converts them — while you live your life.
+
+No more trading hours for dollars. Your time belongs to you again.
+
+DM me the word CLONE and I'll show you how to set it up in under an hour."</div>
+      </div>
+    </div>
+
+    <!-- Script 4 -->
+    <div class="script-card">
+      <div class="script-header">
+        <div class="script-title">💰 Script #4 — 7-Figure Accelerator</div>
+        <div class="script-duration">⏱ ~21 seconds</div>
+      </div>
+      <div class="script-body">
+        <div class="aida-block">
+          <div class="aida-step"><div class="aida-label A">A — Attention</div><div class="aida-content">Challenge the norm. Most people build wrong. This is different.</div></div>
+          <div class="aida-step"><div class="aida-label I">I — Interest</div><div class="aida-content">Done-for-you + high-ticket = the premium combo everyone wants.</div></div>
+          <div class="aida-step"><div class="aida-label D">D — Desire</div><div class="aida-content">Payment plan makes it accessible. Remove the price objection early.</div></div>
+          <div class="aida-step"><div class="aida-label Act">A — Action</div><div class="aida-content">Scarcity + DM CTA.</div></div>
+        </div>
+        <div class="full-script">"Most people spend years building an online business. That's the old way.
+
+The 7-Figure Accelerator builds your entire high-ticket system FOR you — the offers, the funnels, the traffic. Everything done. You just collect the commissions.
+
+And yes, there's a flexible payment plan. You don't need to invest a fortune to make one.
+
+DM me SEVEN right now — only a handful of spots are open this week."</div>
+      </div>
+    </div>
+
+    <!-- Script 5 -->
+    <div class="script-card">
+      <div class="script-header">
+        <div class="script-title">🤖 Script #5 — AIfluencers Premium</div>
+        <div class="script-duration">⏱ ~22 seconds</div>
+      </div>
+      <div class="script-body">
+        <div class="aida-block">
+          <div class="aida-step"><div class="aida-label A">A — Attention</div><div class="aida-content">Trend shock: AI is replacing human influencers. Controversy = clicks.</div></div>
+          <div class="aida-step"><div class="aida-label I">I — Interest</div><div class="aida-content">Explain virtual ambassadors: no contracts, no drama, post 24/7.</div></div>
+          <div class="aida-step"><div class="aida-label D">D — Desire</div><div class="aida-content">Free traffic without ad spend. Every marketer's dream.</div></div>
+          <div class="aida-step"><div class="aida-label Act">A — Action</div><div class="aida-content">Link in bio bridge page.</div></div>
+        </div>
+        <div class="full-script">"Brands are quietly replacing human influencers with AI versions — and those AI accounts are pulling in millions of views and zero drama.
+
+AIfluencers Premium lets you build your own virtual brand ambassador. It posts. It engages. It drives traffic — around the clock, without you lifting a finger.
+
+Imagine getting free organic traffic to your offers 24 hours a day, seven days a week.
+
+The link in my bio shows you exactly how to launch yours today."</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ═══ STEALTH LINK STRATEGY ═══ -->
+<section>
+<div class="container">
+  <p class="section-label">Step 04 — Anti-Spam Architecture</p>
+  <h2 class="section-title">The Stealth Link Strategy</h2>
+
+  <div class="stealth-grid">
+
+    <div class="stealth-card">
+      <span class="stealth-icon">🔑</span>
+      <div class="stealth-title">DM Keyword Automation</div>
+      <div class="stealth-body">
+        Use tools like <strong>ManyChat</strong> or <strong>Instagram's native DM automation</strong>. In your Reel CTA, say: <em>"DM me the word BREAKOUT"</em> — when they do, the bot instantly sends a personalized welcome + your bridge page link. <strong>Never post raw affiliate links publicly.</strong> The link only travels inside DMs — Instagram cannot flag it as spam because it's a private conversation triggered by user intent.
+      </div>
+    </div>
+
+    <div class="stealth-card">
+      <span class="stealth-icon">🌉</span>
+      <div class="stealth-title">"Link in Bio" Bridge Page</div>
+      <div class="stealth-body">
+        Never link directly to JVZoo from your bio. Instead, build a <strong>simple Linktree-style bridge page</strong> (use Carrd, Notion, or a custom domain) that lists all 5 products with short descriptions and your affiliate links behind clean buttons. Instagram sees a legitimate website — not a raw affiliate URL. The bridge page also <strong>pre-sells</strong> the visitor before they hit the offer, increasing conversions by 30–50%.
+      </div>
+    </div>
+
+    <div class="stealth-card">
+      <span class="stealth-icon">🎯</span>
+      <div class="stealth-title">Comment Funnel with "Reply Trigger"</div>
+      <div class="stealth-body">
+        Post a Reel and in the caption write: <em>"Comment 'INFO' below and I'll drop the link for you."</em> When users comment, your DM automation triggers and sends them the bridge page. This creates <strong>massive engagement</strong> (comments = algorithm fuel) while keeping your link distribution 100% in DMs. Triple win: engagement boost + link safety + personalized delivery.
+      </div>
+    </div>
+
+    <div class="stealth-card">
+      <span class="stealth-icon">📧</span>
+      <div class="stealth-title">The Email Capture Play</div>
+      <div class="stealth-body">
+        Your bridge page should include a simple opt-in: <em>"Get the Full Free Strategy Guide"</em> in exchange for an email. Now you own the lead forever. Use <strong>Mailchimp or GetResponse</strong> to send a 5-email sequence promoting all 5 products. Instagram traffic becomes <strong>a permanent email asset</strong> — immune to algorithm changes.
+      </div>
+    </div>
+
+    <div class="stealth-card">
+      <span class="stealth-icon">🛡️</span>
+      <div class="stealth-title">Content-First Trust Building</div>
+      <div class="stealth-body">
+        Use the <strong>80/20 rule</strong>: 80% of your Reels provide pure value (tips, tutorials, AI news, results breakdowns) with no selling. Only 20% are promotional. Instagram's algorithm rewards accounts that don't feel "salesy." When your audience trusts you as an AI authority, every promotional Reel converts at <strong>3–5× higher rates</strong> than cold promotion.
+      </div>
+    </div>
+
+    <div class="stealth-card">
+      <span class="stealth-icon">🔗</span>
+      <div class="stealth-title">Link Cloaking / Shorteners</div>
+      <div class="stealth-body">
+        Never use raw JVZoo links even in DMs. Use <strong>Pretty Links</strong> (WordPress plugin) or <strong>TinyURL with custom alias</strong> (e.g., yoursite.com/breakout-ai). Clean, branded links build trust and are never flagged. They also let you <strong>track clicks per product</strong> so you can double down on what's working.
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ═══ SEO & HASHTAGS ═══ -->
+<section>
+<div class="container">
+  <p class="section-label">Step 05 — 2026 Algorithm Kit</p>
+  <h2 class="section-title">SEO &amp; Hashtag Domination Kit</h2>
+
+  <div class="seo-grid">
+
+    <div class="keyword-box">
+      <h3>🔍 High-Intent Google/YouTube Keywords</h3>
+      <div class="tag-cloud">
+        <span class="tag yellow">make money with AI 2026</span>
+        <span class="tag yellow">best AI tools for passive income</span>
+        <span class="tag yellow">AI affiliate marketing for beginners</span>
+        <span class="tag yellow">how to make $1000 a day with AI</span>
+        <span class="tag yellow">Breakout AI review</span>
+        <span class="tag green">StreetSpeak AI demo</span>
+        <span class="tag green">AI influencer marketing 2026</span>
+        <span class="tag green">done for you AI business</span>
+        <span class="tag green">JVZoo best products 2026</span>
+        <span class="tag blue">7 figure online business with AI</span>
+        <span class="tag blue">Instagram automation AI tool</span>
+        <span class="tag blue">AI Cash Clone tutorial</span>
+        <span class="tag blue">viral video AI generator free</span>
+        <span class="tag pink">AIfluencers review 2026</span>
+        <span class="tag pink">virtual influencer software</span>
+        <span class="tag pink">AI voiceover tool best</span>
+        <span class="tag purple">side hustle AI 2026</span>
+        <span class="tag purple">passive income AI system</span>
+        <span class="tag purple">no experience online income</span>
+      </div>
+    </div>
+
+    <div class="keyword-box">
+      <h3>#️⃣ Trending Instagram Hashtags 2026</h3>
+      <div class="tag-cloud">
+        <span class="tag yellow">#AItools2026</span>
+        <span class="tag yellow">#MakeMoneyOnline</span>
+        <span class="tag yellow">#FinancialFreedom</span>
+        <span class="tag yellow">#PassiveIncome</span>
+        <span class="tag yellow">#SideHustle2026</span>
+        <span class="tag green">#AIAffiliate</span>
+        <span class="tag green">#DigitalMarketing2026</span>
+        <span class="tag green">#WorkFromAnywhere</span>
+        <span class="tag green">#OnlineBusiness</span>
+        <span class="tag green">#FreedomLifestyle</span>
+        <span class="tag blue">#AIInfluencer</span>
+        <span class="tag blue">#ContentCreator</span>
+        <span class="tag blue">#ReelsMarketing</span>
+        <span class="tag blue">#ViralReels</span>
+        <span class="tag blue">#InstagramGrowth</span>
+        <span class="tag pink">#BreakoutAI</span>
+        <span class="tag pink">#AICashClone</span>
+        <span class="tag pink">#7FigureAI</span>
+        <span class="tag pink">#SmartIncome</span>
+        <span class="tag purple">#AIAutomation</span>
+        <span class="tag purple">#MoneyMindset</span>
+        <span class="tag purple">#EntrepreneurLife</span>
+        <span class="tag purple">#AIBusiness</span>
+      </div>
+    </div>
+
+    <div class="keyword-box">
+      <h3>📹 YouTube Short Title Formulas</h3>
+      <div class="tag-cloud">
+        <span class="tag yellow">I Made $X Using This AI Tool (Full Breakdown)</span>
+        <span class="tag green">This AI Made Me [Result] in [Time] — Here's How</span>
+        <span class="tag blue">TOP 5 AI Tools That Actually Pay You in 2026</span>
+        <span class="tag pink">Honest Review: [Product Name] — Does It Work?</span>
+        <span class="tag purple">Watch Me Set Up [Product] From Scratch (LIVE)</span>
+        <span class="tag yellow">The AI Tool Going Viral For Making $X/Day</span>
+        <span class="tag green">10,000 Free Videos With ONE AI Tool?!</span>
+      </div>
+    </div>
+
+    <div class="keyword-box">
+      <h3>📊 2026 Instagram Algorithm Rules</h3>
+      <div class="tag-cloud">
+        <span class="tag yellow">Post 5–7 Reels/week minimum</span>
+        <span class="tag yellow">Hook must land in first 1.5 seconds</span>
+        <span class="tag green">Use 3–5 hashtags, not 30+</span>
+        <span class="tag green">On-screen captions boost watch time +40%</span>
+        <span class="tag blue">Reply to ALL comments in first hour</span>
+        <span class="tag blue">Trending audio = 3× organic reach boost</span>
+        <span class="tag pink">Vertical 9:16, 1080×1920 only</span>
+        <span class="tag pink">Between 7–9 AM or 6–8 PM EST</span>
+        <span class="tag purple">Save/Share rate > Like rate for viral</span>
+        <span class="tag purple">DM responses signal high account quality</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ═══ BRANDING ═══ -->
+<section>
+<div class="container">
+  <p class="section-label">Step 06 — Original Content System</p>
+  <h2 class="section-title">Avoid "Reused Content" Penalties:<br><span style="color:var(--muted);font-size:55%">StreetSpeak AI + Imimic Workflow</span></h2>
+
+  <div class="brand-flow">
+    <div class="flow-step">
+      <div class="flow-step-num">01</div>
+      <span class="flow-step-icon">📦</span>
+      <div class="flow-step-title">Source DFY Video</div>
+      <div class="flow-step-desc">Pull any of StreetSpeak AI's 10,000+ DFY videos. These are your raw creative assets.</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">02</div>
+      <span class="flow-step-icon">✂️</span>
+      <div class="flow-step-title">Remix the Visual Layer</div>
+      <div class="flow-step-desc">Change the color grade, speed (1.1× or 1.2×), add text overlays, emojis, and your branded watermark using CapCut or Premiere Rush.</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">03</div>
+      <span class="flow-step-icon">🎙️</span>
+      <div class="flow-step-title">Add Imimic Voiceover</div>
+      <div class="flow-step-desc">Use Imimic (50K Credits) to generate a custom human-like AI voice with YOUR script. This completely replaces any original audio — new audio = new fingerprint.</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">04</div>
+      <span class="flow-step-icon">💬</span>
+      <div class="flow-step-title">Layer Original Captions</div>
+      <div class="flow-step-desc">Add animated on-screen captions with your own words. Instagram reads text overlays as unique content signals.</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">05</div>
+      <span class="flow-step-icon">🚀</span>
+      <div class="flow-step-title">Post as Original</div>
+      <div class="flow-step-desc">The result is a unique audio fingerprint + remixed visual layer + original text = 100% original content in the algorithm's eyes.</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>🔑 Pro Tip — The "Content Multiplier" System:</strong><br><br>
+    Take ONE StreetSpeak video + ONE Imimic voiceover and produce <strong>3 different versions</strong>: (1) a raw talking-head style Reel, (2) a text-on-screen slideshow version, and (3) a "reaction/commentary" style with your face in a corner. Three unique posts from one source asset. This multiplies your output by 3× while keeping every video algorithm-safe. Use Imimic's different voice personas (male, female, accent variants) so even your audio varies across uploads — zero chance of duplicate content detection.
+  </div>
+</div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p><strong>Explosive Content & Sales Plan</strong> — JVZoo AI Affiliate Portfolio</p>
+  <p>Engineered for Tier-1 Markets (USA, UK, Canada) | Instagram Reels + Google/YouTube SEO | 2026</p>
+  <p style="margin-top:16px;font-size:11px;">⚠️ Disclosure: All affiliate links belong to the account holder. Always comply with FTC guidelines and disclose affiliate relationships in your content.</p>
+</footer>
+
+</body>
+</html>
