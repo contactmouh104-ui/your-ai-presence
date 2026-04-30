@@ -6,9 +6,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navLinks = [
+    const navLinks = [
     { to: "/", label: "Home" },
     { to: "/blog", label: "Blog" },
+    { to: "/comparisons", label: "AI Reviews" },
     { to: "/contact", label: "Contact Us" },
     { to: "/disclaimer", label: "Disclaimer" },
   ];
