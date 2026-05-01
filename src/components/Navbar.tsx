@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-    const navLinks = [
+  const navLinks = [
     { to: "/", label: "Home" },
     { to: "/blog", label: "Blog" },
-    { to: "/comparisons", label: "AI Reviews" },
+    { to: "/comparisons", label: "Comparisons" },
     { to: "/contact", label: "Contact Us" },
     { to: "/disclaimer", label: "Disclaimer" },
   ];
@@ -27,9 +27,14 @@ const Navbar = () => {
             />
           </Link>
 
+          {/* Desktop Navigation */}
           <div className="hidden items-center gap-6 md:flex">
             {navLinks.map((link) => (
-              <Link key={link.to} to={link.to} className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              <Link 
+                key={link.to} 
+                to={link.to} 
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
                 {link.label}
               </Link>
             ))}
@@ -39,6 +44,7 @@ const Navbar = () => {
             <Button variant="hero" size="sm" className="hidden sm:inline-flex">
               <span className="mr-1">+</span> Submit AI Tool
             </Button>
+            
             <button
               className="p-2 text-muted-foreground hover:text-foreground md:hidden"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -49,6 +55,7 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Mobile Navigation */}
         {menuOpen && (
           <div className="border-t border-border bg-background/95 backdrop-blur-md md:hidden">
             <div className="container mx-auto flex flex-col gap-1 px-4 py-3">
@@ -57,7 +64,7 @@ const Navbar = () => {
                   key={link.to}
                   to={link.to}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-md px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className="rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -71,3 +78,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
