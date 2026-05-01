@@ -1,81 +1,78 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Menu, X, Search, Plus, Zap } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+
+const navLinks = [
+  { to: "/", label: "Home", icon: "🏠" },
+  { to: "/blog", label: "Blog", icon: "📝" },
+  { to: "/comparisons", label: "Comparisons", icon: "⚖️" },
+  { to: "/contact", label: "Contact Us", icon: "✉️" },
+  { to: "/disclaimer", label: "Disclaimer", icon: "📋" },
+];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-  const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/blog", label: "Blog" },
-    { to: "/comparisons", label: "Comparisons" },
-    { to: "/contact", label: "Contact Us" },
-    { to: "/disclaimer", label: "Disclaimer" },
-  ];
+  // تأثير التمرير لتغيير خلفية الـ navbar
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // إغلاق القائمة عند تغيير الصفحة
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
+  const isActive = (path) =>
+    path === "/" ? location.pathname === "/" : location.pathname.startsWith(path);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <nav aria-label="Main navigation">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link to="/" className="flex items-center gap-2">
-            <img
-              src="/logo.webp"
-              alt="ShoNow Logo"
-              className="h-14 w-auto"
-              loading="eager"
-            />
-          </Link>
+    <>
+      {/* شريط الإحصائيات العلوي */}
+      <div className="hidden sm:flex items-center justify-center gap-6 bg-yellow-500/5 border-b border-yellow-500/10 py-1.5 text-xs text-zinc-500">
+        <span className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse" />
+          500+ AI Tool Listed
+        </span>
+        <span>🔥 Updated Daily</span>
+        <span>⭐ Expert Reviews</span>
+      </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-6 md:flex">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.to} 
-                to={link.to} 
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Button variant="hero" size="sm" className="hidden sm:inline-flex">
-              <span className="mr-1">+</span> Submit AI Tool
-            </Button>
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-black/95 shadow-[0_1px_40px_rgba(234,179,8,0.08)]"
+            : "bg-black/80"
+        } backdrop-blur-xl border-b border-yellow-500/10`}
+      >
+        <nav aria-label="Main navigation">
+          <div className="container mx-auto flex h-16 items-center justify-between px-4 gap-4">
             
-            <button
-              className="p-2 text-muted-foreground hover:text-foreground md:hidden"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
+            {/* اللوجو */}
+            <Link to="/" className="flex items-center gap-2 shrink-0">
+              <img
+                src="/logo.webp"
+                alt="ShoNow Logo"
+                className="h-10 w-auto"
+                loading="eager"
+              />
+              {/* بادج AI */}
+              <span className="hidden sm:inline-flex text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-yellow-500/15 text-yellow-500 border border-yellow-500/30 tracking-wider uppercase">
+                AI
+              </span>
+            </Link>
 
-        {/* Mobile Navigation */}
-        {menuOpen && (
-          <div className="border-t border-border bg-background/95 backdrop-blur-md md:hidden">
-            <div className="container mx-auto flex flex-col gap-1 px-4 py-3">
+            {/* روابط الديسكتوب */}
+            <div className="hidden lg:flex items-center gap-0.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  onClick={() => setMenuOpen(false)}
-                  className="rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
-    </header>
-  );
-};
-
-export default Navbar;
-
+                  className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    isActive(link.to)
+                      ? "text-yellow-500"
+                      : "text-zinc-400 hover:text-white hover:bg-white/
